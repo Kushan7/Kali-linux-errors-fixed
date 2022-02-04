@@ -1,0 +1,57 @@
+#if not installed:
+sudo apt-get install tor
+
+service tor start
+service tor status 
+
+#once it is running you can move to another step
+
+sudo nano /etc/proxychains.conf
+
+#This will open the configuration file in whih we have to edit:-
+
+1.Remove Dynamic chain from comment
+2.comment Strict chain and Random chain
+3.Remove proxy DNS from comment
+4.write socks5 127.0.0.1 9050 in last line of proxy list 
+
+service tor restart
+
+proxychains firefox www.bing.com
+
+#you can use any search engine in the place of bing
+
+*testing*
+
+#the good thing is that proxychains keeps on changing my IP address in a dynamic way so that it provides good anonymity. 
+
+
+########################################################################
+
+Errors troubleshooting-
+
+The error: Failed to start tor.service: Unit tor.service not found.
+or
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Package tor is not available but is referred to by another package.
+This may mean that the package is missing, has been obsoleted, or
+is only available from another source
+E: Package 'tor' has no installation candidate
+
+Solution-
+This error mostly occurs when recenlty install system and you have some broken sources repositories. If you are running kali linux just go to the kali documentation in browser and search sources.repositories. 
+click here for the page. Copy the regular repository and paste it in sources.list  
+
+
+# https://www.kali.org/docs/general-use/kali-linux-sources-list-repositories/
+
+sudo nano /etc/apt/sources.list
+
+sudo apt-get update && apt-get upgrade
+#This can solve one of the biggest error of proxychains. 
+#---------------------------------------------
+
+The error and soln- The second error is for DNS leaks and server not found in the browser. 
+The soln- If you get these errors then make sure that you restarted the tor service and your browser is not running. Also, check that dynamic chain in the proxy configuration is not commented, along with that check for proxy DNS also, make sure that both are not commented.
