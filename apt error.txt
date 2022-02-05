@@ -1,0 +1,27 @@
+Fix “Unable to locate package” error in Kali Linux.:-
+
+This error is basically due to entries in the sources.list file.
+Open /etc/apt/ using following command:
+cd /etc/apt/
+
+Open the sources.list file using:
+
+sudo nano sources.list
+--------------------------------------------------------------
+
+If you still get the error, change "http" to "https"
+
+Q-showing permission denied???
+
+Ans-sudo nano sources.list 
+
+Q-after you follow the steps he showed, go for
+
+Ans-sudo apt-get update && apt-get upgrade.
+After that you will be able to install whatever packages you want to install
+
+
+Q-After all these steps also it is not working?
+
+Ans-If then also error then you might vbe searching for an unknown repository that doesn't exists, check the spelling for precaution.
+
