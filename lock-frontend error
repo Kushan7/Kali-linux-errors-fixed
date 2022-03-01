@@ -1,7 +1,7 @@
+sudo rm /var/lib/dpkg/lock-frontend
 sudo rm /var/lib/apt/lists/lock
 sudo rm /var/cache/apt/archives/lock
 sudo rm /var/lib/dpkg/lock
-sudo rm /var/lib/dpkg/lock-frontend
-#the file which it shows , cuasing trouble should be deleted shown in the video.
+#the file which it shows , causing trouble should be deleted shown in the video.
 
 sudo dpkg --configure -a
